@@ -1,0 +1,8 @@
+.vscode
+coverage
+node_modules
+/lib
+*-debug.log
+*-error.log
+package-lock.json
+.DS_Store

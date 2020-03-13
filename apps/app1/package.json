@@ -1,0 +1,32 @@
+{
+  "name": "app1",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "scripts": {
+    "watch": "yarn build-clean && yarn nodemon",
+    "format": "prettier --config ./.prettierrc --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "eslint ./src --cache --ext .ts --config .eslintrc",
+    "format-lint": "yarn format && yarn lint",
+    "build-clean": "rm -rf lib",
+    "build-incremental": "tsc --incremental",
+    "nodemon-dev": "yarn build-incremental && yarn start",
+    "start": "node lib/index.js",
+    "build": "yarn build-clean && tsc",
+    "test": "jest"
+  },
+  "dependencies": {
+    "koa": "^2.11.0",
+    "prom-client": "^12.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.23",
+    "@types/koa": "^2.11.2",
+    "@types/node": "^12.0.0",
+    "eslint": "^6.8.0",
+    "jest": "24.9.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "24.2.0",
+    "typescript": "^3.8.2"
+  }
+}
